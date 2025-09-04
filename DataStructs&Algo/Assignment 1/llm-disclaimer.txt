@@ -1,0 +1,39 @@
+#Problem d I used LLM model to understand 
+
+for(int i = 0; i < rrr.size(); i++){
+       int v1 = rrr[i] - '0'; 
+       total = total  + v1 * v2[i];
+    } 
+
+since this portion of converting the string into integer was causing various issues 
+with just using std::stoi(str); since it was greatly altering my numbers with no apparent reason
+So used ai to find different methods to substitute std::stoi(str); which I combined two different 
+portions  I combined this
+	orginal 
+for(int i = 0; i < rrr.size(); i++){ 					ai generated 
+       total = total  + v1 * v2[i];              and             int v1 = rrr[i] - '0';
+    } 
+
+to make the portion of the LLM model
+
+
+
+#I also used problem g on small portions  which I used
+
+ double rad = angle * M_PI / 180.0;
+
+by chat gpt since every time I try to do the processes of calculating the equation it gave me different number every time which I ended up switching it up and allowing ai to debug my code for additional step to calculate the problem 
+
+
+
+
+#lastly problem-f 
+
+I was trying to sort the the list to ascending order and which I found a alternative in which allowed me to sort the list the way it needed to be when doing the ascending order I used the bro code method in which i used his ascending method which gave various problems with formatting and which ended up for me to use this 
+
+std::sort(list2.begin(), list2.end()); 
+
+to solve the problem.
+
+
+

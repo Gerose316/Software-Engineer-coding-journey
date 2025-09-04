@@ -1,0 +1,65 @@
+
+I used LLM for all the probkems 
+
+I used chat GPT for various problems I usedd llm in the way of duebgging the problem and trying to understand and fix and get closer to the solution of the problem in 
+majority if the probelms I used a stl implementation and understood why the probelsm are formed like this and took insprition from the professors inisghigh and llm insight and my own coded to create the soltuoin of the problems of a-h
+it took abotu various late nights to do but succesfullu finshed the probelm and used priority_queue in most of the problems which took a long time and used various  
+stl implementation of priority_queue and kept the original class I used and solved the question with the assistance, when I used the class it didn't work so I reuslted in usijgn 
+of LLM and began to not use classes and relied on normal functions and stl implementation to slove the queasitojns 
+, in additioln when doing the problems I used my solution and solutions that I used before and online and combines the solituiin in search for getting the answer
+for exaample in probelm e i used this from llm and and mixed it with my very own termnolgy to get woards the solution which took about a good 36 hours to do to figure out this solutiokn which was very diffult duting the time I made this 
+
+
+
+
+
+
+
+
+
+
+
+ main(){
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
+    int Query;
+    long long factor;
+    std::cin >> Query >> factor;
+
+    int currentTime = 0;
+    std::unordered_set<std::string> s;  
+    std::priority_queue<std::pair<long long, std::string>, std::vector<std::pair<long long, std::string>>, std::greater<std::pair<long long, std::string>>> pq;  
+
+    auto query = [&]() -> std::string {
+        while (!pq.empty()) {
+            auto [p, m] = pq.top(); pq.pop(); 
+            if (s.count(m)) {
+                return m;  
+            }
+        }
+        return "doctor takes a break"; 
+    };
+
+
+
+    for llm and was very diffulet needed help to so in additiokn I use llm for h and g in which took some time to figure out but succesfullu did it in time 
+    I used     
+    long dia = std::stoi(n);
+            if( maxHeap.empty() || dia <= maxHeap.top()){
+                maxHeap.push(dia);
+        }else{
+            minHeap.push(dia);
+        }
+
+        if(maxHeap.size() > minHeap.size() + 1){
+            minHeap.push(maxHeap.top());
+            maxHeap.pop();
+
+        }else if(minHeap.size() > maxHeap.size()){
+            maxHeap.push(minHeap.top());
+            minHeap.pop();
+    }
+        }
+    
+    add my own termnolgy and understod why vairous parts needed stil implmenentation orginally it was a class but since it was not efficeint I switch it to a stl implemention which was way faster 

@@ -1,0 +1,27 @@
+lookup(you,i).
+lookup(i,'why do you').
+lookup(do,'no,').
+lookup(are,'am not').
+lookup(portuguese,russian).
+lookup(X,X).  % default case if no match is found
+
+speaking([], []).
+speaking([Speakh|Speakt], [Nh|Nt]) :-
+    lookup(Speakh, Nh),
+    speaking(Speakt, Nt).
+
+printt([]).
+printt([Speakh|Speakt]) :-
+    write(Speakh),
+    write(' '),
+    print(Speakt).
+
+interact :-
+    nl,
+    write('Read> '),
+    readln(Word),                % reads user input as list of words
+    speaking(Word, Response),    % translate each word
+    write('Eliza: '),
+    printt(Response),
+    nl,
+    interact.

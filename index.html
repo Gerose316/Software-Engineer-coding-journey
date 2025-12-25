@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vogue Haven - Fashion For Everyone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <span>FREE SHIPPING ON ORDERS OVER $50 | USE CODE: FREESHIP</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo" onclick="showHomePage()">Omni Verse</div>
+                <nav class="main-nav">
+                    <a class="nav-link" onclick="filterCategory('women')">WOMEN</a>
+                    <a class="nav-link" onclick="filterCategory('men')">MEN</a>
+                    <a class="nav-link" onclick="filterCategory('women-tshirts')">WOMEN'S T-SHIRTS</a>
+                    <a class="nav-link" onclick="filterCategory('women-pants')">WOMEN'S PANTS</a>
+                    <a class="nav-link" onclick="filterCategory('men-tshirts')">MEN'S T-SHIRTS</a>
+                    <a class="nav-link" onclick="filterCategory('men-pants')">MEN'S PANTS</a>
+                </nav>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for items..." onkeyup="handleSearch(event)">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <button class="icon-btn" onclick="showSizeCalculator()" title="Size Guide">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="shopify-btn" onclick="window.open('https://your-store.myshopify.com', '_blank')">
+                    SHOP NOW
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&h=600&fit=crop" alt="New Collection">
+                <div class="hero-overlay">
+                    <h1>NEW SEASON ESSENTIALS</h1>
+                    <p>Refresh your wardrobe with the latest trends</p>
+                    <button class="hero-btn" onclick="scrollToSection('products')">SHOP NEW IN</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Quick Links -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="quick-links-grid">
+                    <div class="quick-link-card" onclick="filterCategory('women')">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=500&fit=crop" alt="Women">
+                        <div class="quick-link-overlay">
+                            <h3>WOMEN</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="filterCategory('men')">
+                        <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=400&h=500&fit=crop" alt="Men">
+                        <div class="quick-link-overlay">
+                            <h3>MEN</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="filterCategory('women-tshirts')">
+                        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=500&fit=crop" alt="Women's T-Shirts">
+                        <div class="quick-link-overlay">
+                            <h3>WOMEN'S T-SHIRTS</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="filterCategory('women-pants')">
+                        <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=400&h=500&fit=crop" alt="Women's Pants">
+                        <div class="quick-link-overlay">
+                            <h3>WOMEN'S PANTS</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="filterCategory('men-tshirts')">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop" alt="Men's T-Shirts">
+                        <div class="quick-link-overlay">
+                            <h3>MEN'S T-SHIRTS</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="filterCategory('men-pants')">
+                        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=500&fit=crop" alt="Men's Pants">
+                        <div class="quick-link-overlay">
+                            <h3>MEN'S PANTS</h3>
+                            <span>SHOP NOW →</span>
+                        </div>
+                    </div>
+                    <div class="quick-link-card" onclick="showSizeCalculator()">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=500&fit=crop" alt="Size Guide">
+                        <div class="quick-link-overlay">
+                            <h3>SIZE GUIDE</h3>
+                            <span>FIND YOUR FIT →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">SHOP OUR COLLECTION</h2>
+                    <div class="filter-bar">
+                        <div class="filter-left">
+                            <span id="productCount">0 items</span>
+                        </div>
+                        <div class="filter-right">
+                            <select class="filter-select" onchange="sortProducts(this.value)">
+                                <option value="featured">Sort: Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-layout">
+                    <aside class="sidebar">
+                        <div class="filter-section">
+                            <h3>CATEGORIES</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="all" checked onchange="updateFilters()">
+                                    <span>All Items</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="women" onchange="updateFilters()">
+                                    <span>Women</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="men" onchange="updateFilters()">
+                                    <span>Men</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="women-tshirts" onchange="updateFilters()">
+                                    <span>Women's T-Shirts</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="women-pants" onchange="updateFilters()">
+                                    <span>Women's Pants</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="men-tshirts" onchange="updateFilters()">
+                                    <span>Men's T-Shirts</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="men-pants" onchange="updateFilters()">
+                                    <span>Men's Pants</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>PRICE RANGE</h3>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="0-50" onchange="updatePriceFilter()">
+                                    <span>Under $50</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="50-100" onchange="updatePriceFilter()">
+                                    <span>$50 - $100</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="100-200" onchange="updatePriceFilter()">
+                                    <span>$100 - $200</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" value="200+" onchange="updatePriceFilter()">
+                                    <span>$200+</span>
+                                </label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <h2>JOIN THE CLUB</h2>
+                <p>Get exclusive access to new arrivals, sales & more</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>SUBSCRIBE</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4>HELP & INFORMATION</h4>
+                        <ul>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Delivery & Returns</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>ABOUT VOGUE HAVEN</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Corporate</a></li>
+                            <li><a href="#">Investors</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>MORE FROM US</h4>
+                        <ul>
+                            <li><a href="#">Mobile App</a></li>
+                            <li><a href="#">Gift Vouchers</a></li>
+                            <li><a href="#">Student Discount</a></li>
+                            <li><a href="#">Refer a Friend</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>SHOPPING FROM</h4>
+                        <p>You're in United States</p>
+                        <div class="social-links">
+                            <a href="#">📱</a>
+                            <a href="#">📘</a>
+                            <a href="#">📷</a>
+                            <a href="#">🎵</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 Vogue Haven</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy & Cookies</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="productDetailPage" class="page">
+        <div class="product-detail-wrapper">
+            <div class="breadcrumb">
+                <a onclick="showHomePage()">Home</a> / <span id="breadcrumbCategory"></span> / <span id="breadcrumbProduct"></span>
+            </div>
+            <div class="product-detail-container" id="productDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- Size Calculator Page -->
+    <div id="sizeCalculatorPage" class="page">
+        <div class="size-calculator-wrapper">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a onclick="showHomePage()">Home</a> / Size Guide
+                </div>
+                
+                <div class="size-calculator-content">
+                    <div class="calculator-header">
+                        <h1>FIND YOUR SIZE</h1>
+                        <p>Get the perfect fit with our size calculator</p>
+                    </div>
+
+                    <div class="gender-tabs">
+                        <button class="gender-tab active" onclick="selectGender('women')" id="womenBtn">WOMEN</button>
+                        <button class="gender-tab" onclick="selectGender('men')" id="menBtn">MEN</button>
+                    </div>
+
+                    <div class="calculator-grid">
+                        <div class="measurement-form" id="measurementForm"></div>
+                        <div class="size-results" id="sizeResults"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
